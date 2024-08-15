@@ -88,7 +88,7 @@ class UserManager:
     def search_users(self, name=None, email=None, age=None):
         """
         Searches for users based on specified criteria: name, email, and age.
-        Returns a list of users that match the criteria.
+        Returns a list of users it matches the criteria.
         """
         results = self.users
         if name:
@@ -103,17 +103,14 @@ class UserManager:
     def validate_email(email):
         """
         Validates the format of an email address using a regular expression.
-        Returns True if the email format is valid, otherwise False.
+        Returns True if the email format is valid or it returns False.
         """
         # Simple regex for email validation
         email_regex = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
         return re.match(email_regex, email) is not None
 
 def main():
-    """
-    Main function to run the user management system.
-    Provides a console-based interface for CRUD operations.
-    """
+    
     user_manager = UserManager()
     
     while True:
@@ -156,7 +153,7 @@ def main():
                     print(user)
         
         elif choice == '3':
-            # Prompt for user ID and updated details
+            # Prompt for  details
             user_id = input("Enter user ID to update: ")
             updated_user = {}
             name = input("Enter new Name (leave blank to skip): ")
@@ -204,7 +201,7 @@ def main():
             print("Invalid choice. Please try again.")
 
         # Prompt for feedback
-        feedback = input("Would you like to provide feedback on your experience? (yes/no): ")
+        feedback = input("Would you like to provide feedback on your experience? (type yes/no): ")
         if feedback.lower() == 'yes':
             user_feedback = input("Please enter your feedback: ")
             print("Thank you for your feedback!")
